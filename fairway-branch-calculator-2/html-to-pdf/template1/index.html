@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Fairway Branch Mortgage Calculator</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+	      rel="stylesheet">
+	<link rel="stylesheet" href="https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/css/style.css">
+</head>
+<body>
+
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		font-family: 'Poppins', sans-serif;
+		line-height: 1;
+		color: #2A3A51;
+	}
+
+	body, html {
+		height:100%!important;
+		padding:0!important;
+		margin:0 !important;
+	}
+
+	a {
+		text-decoration: none;
+		text-transform: uppercase;
+		color: #2A3A51;
+		font-size: 20px;
+		font-weight: 500;
+	}
+
+	img {
+		line-height: 0;
+	}
+
+	table {
+		min-width: 100%;
+		border-collapse: collapse;
+	}
+
+	.title {
+		padding-top: 80px;
+		padding-bottom: 30px;
+		font-size: 52px;
+		text-align: center;
+		line-height: 1;
+		font-weight: 600;
+	}
+
+	.text--green {
+		color: #80C33F;
+	}
+
+	.subtitle {
+		color: #2A3A51;
+		text-align: center;
+		font-weight: 300;
+	}
+
+	.content {
+		width: 90%;
+		height: 680px;
+		margin: 60px auto 0;
+		background-image: url('https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/images/bg-content.jpg');
+		background-position: 50% 0;
+		background-repeat: no-repeat;
+		background-size: 100% 93%;
+	}
+
+	.content__title {
+		font-size: 32px;
+		font-weight: 600;
+	}
+
+	.content__cost {
+		padding-top: 40px;
+		padding-bottom: 20px;
+		font-size: 52px;
+		font-weight: 600;
+	}
+
+	.content__cost-subtitle {
+		max-width: 90%;
+		padding-bottom: 60px;
+		font-size: 20px;
+		color: #3F546F;
+	}
+
+	.single-f-1 {
+		background-image: url('https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/images/single-f-1.png');
+	}
+
+	.single-f-2 {
+		background-image: url('https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/images/single-f-2.png');
+	}
+
+	.single-f-3 {
+		background-image: url('https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/images/single-f-3.png');
+	}
+
+	.sf-1-veteran {
+		background-image: url('https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/images/sf-1-veteran.png');
+	}
+
+	.sf-2-veteran {
+		background-image: url('https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/images/sf-2-veteran.png');
+	}
+
+	.sf-3-veteran {
+		background-image: url('https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/images/sf-3-veteran.png');
+	}
+
+	.sf-1-1st {
+		background-image: url('https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/images/sf-1-1st.png');
+	}
+
+	.sf-2-1st {
+		background-image: url('https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/images/sf-2-1st.png');
+	}
+
+	.sf-3-1st {
+		background-image: url('https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/images/sf-3-1st.png');
+	}
+
+	.con-1 {
+		background-image: url('https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/images/con-1.png');
+	}
+
+	.con-2 {
+		background-image: url('https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/images/con-2.png');
+	}
+
+	.con-3 {
+		background-image: url('https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/images/con-3.png');
+	}
+
+	.con-1-veteran {
+		background-image: url('https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/images/con-1-veteran.png');
+	}
+
+	.con-2-veteran {
+		background-image: url('https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/images/con-2-veteran.png');
+	}
+
+	.con-3-veteran {
+		background-image: url('https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/images/con-3-veteran.png');
+	}
+
+	.con-1-1st {
+		background-image: url('https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/images/con-1-1st.png');
+	}
+
+	.con-2-1st {
+		background-image: url('https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/images/con-2-1st.png');
+	}
+
+	.con-3-1st {
+		background-image: url('https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/images/con-3-1st.png');
+	}
+
+	.town-1 {
+		background-image: url('https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/images/town-1.png');
+	}
+
+	.town-2 {
+		background-image: url('https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/images/town-2.png');
+	}
+
+	.town-3 {
+		background-image: url('https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/images/town-3.png');
+	}
+
+	.town-1-veteran {
+		background-image: url('https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/images/town-1-veteran.png');
+	}
+
+	.town-2-veteran {
+		background-image: url('https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/images/town-2-veteran.png');
+	}
+
+	.town-3-veteran {
+		background-image: url('https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/images/town-3-veteran.png');
+	}
+
+	.town-1-1st {
+		background-image: url('https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/images/town-1-1st.png');
+	}
+
+	.town-2-1st {
+		background-image: url('https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/images/town-2-1st.png');
+	}
+
+	.town-3-1st {
+		background-image: url('https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/images/town-3-1st.png');
+	}
+
+	.multi-1 {
+		background-image: url('https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/images/multi-1.png');
+	}
+
+	.multi-2 {
+		background-image: url('https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/images/multi-2.png');
+	}
+
+	.multi-3 {
+		background-image: url('https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/images/multi-3.png');
+	}
+
+	.multi-1-veteran {
+		background-image: url('https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/images/multi-1-veteran.png');
+	}
+
+	.multi-2-veteran {
+		background-image: url('https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/images/multi-2-veteran.png');
+	}
+
+	.multi-3-veteran {
+		background-image: url('https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/images/multi-3-veteran.png');
+	}
+
+	.multi-1-1st {
+		background-image: url('https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/images/multi-1-1st.png');
+	}
+
+	.multi-2-1st {
+		background-image: url('https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/images/multi-2-1st.png');
+	}
+
+	.multi-3-1st {
+		background-image: url('https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/images/multi-3-1st.png');
+	}
+
+	.content__build {
+		width: 100%;
+		height: 460px;
+		background-size: 90%;
+		background-position: 50% 100%;
+		background-repeat: no-repeat;
+	}
+
+	.content__hr {
+		width: 100%;
+		height: 5px;
+		margin-top: -4px;
+		background-color: #D9DDE2;
+	}
+
+	.content__footer-text {
+		font-size: 24px;
+		font-weight: 600;
+	}
+
+	.list__name,
+	.list__value {
+		display: inline-block;
+		font-size: 16px;
+	}
+
+	.list__name {
+		width: 200px;
+	}
+
+	.list__value {
+		width: 100px;
+		font-weight: 600;
+	}
+
+	.total {
+		width: 80%;
+		height: 440px;
+		margin: -15px auto 0 auto;
+		padding: 0 105px;
+		background-image: url('https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/images/bg-total.jpg');
+		background-position: 50% 0;
+		background-repeat: no-repeat;
+		background-size: 100% 93%;
+	}
+
+	.total__title {
+		padding: 40px 0 30px;
+		text-align: center;
+		font-size: 32px;
+		font-weight: 600;
+		color: #fff;
+	}
+
+	.total__list-name {
+		display: inline-block;
+		width: 80%;
+		padding-top: 10px;
+		padding-bottom: 15px;
+		color: #929BA6;
+		font-size: 22px;
+		border-bottom: 1px solid #6d7479;
+	}
+
+	.total__list-value {
+		display: inline-block;
+		width: 20%;
+		padding-top: 10px;
+		padding-bottom: 15px;
+		text-align: right;
+		font-size: 22px;
+		color: #fff;
+		border-bottom: 1px solid #6d7479;
+	}
+
+	.total__list-item:last-child .total__list-value,
+	.total__list-item:last-child .total__list-name {
+		border-bottom: 1px solid transparent;
+	}
+
+	.total__list-name--white {
+		color: #fff;
+		font-weight: 600;
+	}
+
+	.footer {
+		position: absolute;
+		background-color: #2A3A51;
+		padding: 30px 60px 0px 0;
+	}
+
+	.footer__logo {
+		display: inline-block;
+		width: 100%;
+		height: 60px;
+		background-image: url('https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/images/logo-footer.png');
+		background-position: 80px 50%;
+		background-repeat: no-repeat;
+		background-size: 40%;
+	}
+
+	.footer__text,
+	.footer__link {
+		display: inline-block;
+		margin: 0;
+		padding-right: 55px;
+		color: #fff;
+		font-size: 14px;
+		font-weight: 300;
+	}
+
+	.footer__link:last-child {
+		padding-right: 0;
+	}
+
+</style>
+
+<!-- TOP -->
+<table>
+	<tr style="padding: 20px;">
+		<td style="width: 120px; border-right: 1px solid #2A3A51; border-bottom: 1px solid #2A3A51; background-image: url('https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/images/top-logo.jpg'); background-repeat: no-repeat; background-size: 50px; background-position: 50% 50%;">
+			<a href="https://yandex.ru" style="display: inline-block;"></a>
+		</td>
+		<td style="border-bottom: 1px solid #2A3A51;">
+			<a style="padding-left: 40px; line-height: 1;" href="https://yandex.ru">TEAM</a>
+			<a style="padding-left: 20px; line-height: 1;" href="https://yandex.ru">CALCULATOR</a>
+			<a style="padding-left: 20px; line-height: 1;" href="https://yandex.ru">EDUCATION</a>
+		</td>
+		<td style="width: 90px; padding-right: 20px; border-bottom: 1px solid #2A3A51;">
+			<a style="
+			display: inline-block;
+			width: 160px;
+			height: 36px;
+			padding-left: 35px;
+			line-height: 1;
+			background: url('https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/images/phone.png');
+			background-repeat: no-repeat;
+			background-size: 20px;
+			background-position: 0px 8px;"
+			   href=tel:+18776990353">
+				877-699-0353</a>
+		</td>
+
+		<td style="width: 150px; padding-right: 20px; border-bottom: 1px solid #2A3A51;">
+			<a style="
+			display: block;
+			width: 200px;
+			height: 100px;
+			color: #fff;
+			background: url('https://dev.kasapvictor.ru/digitalbutlers/html-to-pdf/template1/images/button-text.png');
+		    background-size: 100%;
+		    background-position: center;
+			background-repeat: no-repeat;
+			font-size: 0"
+			   href="https://yandex.ru">GET STARTED</a>
+
+		</td>
+	</tr>
+</table>
+
+<!-- TITLE -->
+<div class="title">
+	<div class="title__text"></div>
+	See The Total Cost Of Your Mortgage.
+	<div class="title__text text--green">Get A Detailed PDF Report</div>
+</div>
+
+<!-- SUBTITLE -->
+<div class="subtitle">
+	<div class="subtitle__text">We make the home loan process as simple as possible</div>
+	<div class="subtitle__text">by guiding you through every step.</div>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+	<table style="width: 100%">
+		<tr>
+			<td style="width: 40%; padding-top: 60px; padding-left: 60px;">
+				<div class="content__title">I Want To Own:</div>
+				<div class="content__title text--green" data-type-of-property>Townhome</div>
+				<div class="content__cost" data-price-of-property>$2,117</div>
+				<div class="content__cost-subtitle">Estimated monthly payment for your dream home</div>
+			</td>
+			<td style="width: 60%; border-bottom: 3px solid #D9DDE2;">
+				<div class="content__build"></div>
+			</td>
+		</tr>
+	</table>
+	<div class="content__hr"></div>
+
+	<table style="width: 100%">
+		<tr>
+			<td style="width: 40%; padding-top: 30px; padding-left: 60px;">
+				<div class="content__footer-text">Estimated Monthly Payment For Your Dream Home</div>
+			</td>
+			<td style="width: 60%; padding-top: 40px;">
+				<table style="padding-left: 40px;">
+					<tr>
+						<td>
+							<div class="content__list-item">
+								<span class="list__name">Home value:</span><span class="list__value" data-homevalue>$1,378</span>
+							</div>
+							<div class="content__list-item">
+								<span class="list__name">Down payment:</span><span class="list__value" data-downpayment>$1,378</span>
+							</div>
+							<div class="content__list-item">
+								<span class="list__name">Interest rate:</span><span class="list__value"
+								                                                    data-rate>$1,378</span>
+							</div>
+						</td>
+						<td>
+							<div class="content__list-item" style="margin-top: -30px;">
+								<span class="list__name">Mortgage Term:</span><span class="list__value" data-term>15 years</span>
+							</div>
+							<div class="content__list-item" style="margin-top: -10px;">
+								<span class="list__name">Benefits:</span><span class="list__value" data-kind>No Benefits</span>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</div>
+
+<!-- TOTAL -->
+<div class="total">
+	<div class="total__title">How Is My Monthly Payment Calculated?</div>
+	<div class="total__list-item">
+		<span class="total__list-name">Principal & Interest:</span><span class="total__list-value" data-total-principal-interest>$1,378</span>
+	</div>
+	<div class="total__list-item">
+		<span class="total__list-name">Homeowner's Insurance:</span><span class="total__list-value"
+		                                                                  data-total-insurance>$66</span>
+	</div>
+	<div class="total__list-item">
+		<span class="total__list-name">HOA Fees:</span><span class="total__list-value" data-total-fees>$0</span>
+	</div>
+	<div class="total__list-item">
+		<span class="total__list-name total__list-name--white">Total Monthly Payment:</span><span
+			class="total__list-value" data-total-monthly>$2,117</span>
+	</div>
+</div>
+
+<div class="footer">
+	<table>
+		<tr>
+			<td class="footer__col" style="width: 200px">
+				<a class="footer__link footer__logo" href="https://yandex.ru"></a>
+			</td>
+			<td class="footer__col" style="width: 400px">
+				<span class="footer__text">4750 S. Biltmore Lane Madison, WI 53718</span>
+				<a class="footer__link" href="tel:+18669124800">Coll Free: 866-912-4800</a>
+				<a class="footer__link" href="https://yandex.ru">Servicing: @fairwaymc.com</a>
+			</td>
+
+
+		</tr>
+	</table>
+</div>
+</body>
+</html>
